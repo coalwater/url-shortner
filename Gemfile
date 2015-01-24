@@ -41,6 +41,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'simplecov'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 # capistrano group
