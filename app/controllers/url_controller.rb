@@ -4,7 +4,7 @@ class UrlController < ApplicationController
     if @url
       redirect_to @url.original_url
     else
-      render file: 'public/404.html'
+      render file: 'public/404.html', status: :not_found
     end
   end
 
