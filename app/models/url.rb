@@ -1,3 +1,6 @@
+# A url represents a single shortened url, each
+# url has a +key+ which stores the stores the short code
+# that maps to the +original_url+
 class Url < ActiveRecord::Base
 
   has_many :hits, class_name: UrlHit
