@@ -2,7 +2,7 @@ class UrlController < ApplicationController
   before_action :set_url, only: %i(show)
   def show
     if @url
-      redirect_to @url.original_url
+      redirect_to @url.hit_and_return
     else
       render file: 'public/404.html', status: :not_found
     end
