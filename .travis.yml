@@ -1,0 +1,6 @@
+language: ruby
+before_script:
+  - mysql -e 'create database `url-shortner_test`;'
+addons:
+  code_climate:
+    repo_token: 216c32a7a26a42fb67f55c11ef007a0ef9a0f23859c44e8a6aeb72f90dca7720
