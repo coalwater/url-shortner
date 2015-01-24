@@ -9,10 +9,14 @@ class UrlController < ApplicationController
   end
 
   private
+  # Sets the url object for processing
   def set_url
     @url = Url.find_by_key(url_param)
   end
 
+  # Returns the id (url key) from the parameters
+  #
+  # @return [String] The id (key)
   def url_param
     params.require :id
   end
