@@ -22,6 +22,11 @@ describe UrlController, type: :controller do
         get :show, id: 'non-existing-url'
         expect(response.code).to eq '404'
       end
+      it 'does not create any hits' do
+        expect {
+          get :show, id: 'non-existing-url'
+        }.to change(UrlHit, :count).by 0
+      end
     end
   end
 
