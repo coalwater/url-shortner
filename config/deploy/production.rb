@@ -7,8 +7,8 @@ set :deploy_to, "/home/#{fetch(:deploy_user)}/www/#{fetch(:full_app_name)}"
 
 set :chruby_ruby, 'ruby-2.1.5'
 
-set :puma_threads, [2, 4]
-set :puma_workers, 2
+set :puma_threads, [1, 2]
+set :puma_workers, 1
 set :puma_bind, -> {"unix://#{shared_path}/tmp/sockets/#{fetch(:application)}_puma.sock"}
 set :puma_state, -> {"#{shared_path}/tmp/pids/puma.state"}
 set :puma_pid, -> {"#{shared_path}/tmp/pids/puma.pid"}
