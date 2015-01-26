@@ -7,6 +7,7 @@ set :repo_url, 'git@github.com:coalwater/url-shortner.git'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :keep_releases, 5
+set :pty, true
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
