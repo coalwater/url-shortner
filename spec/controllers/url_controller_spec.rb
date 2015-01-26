@@ -14,6 +14,14 @@ describe UrlController, type: :controller do
           url.reload
         }.to change(url.hits, :count).by 1
       end
+      context 'from ip \'12.34.56.78\'' do
+        let(:ip) { '12.34.56.78' }
+        it 'stores the ip in the url_hit object' do
+          allow(request).to receive(:ip).and_return ip
+          get :show, id: url.key
+          expect(url.hits.last.ip).to eq ip
+        end
+      end
     end
     context 'with a non existing url' do
       it 'shows a 404 error' do
