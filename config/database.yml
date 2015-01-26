@@ -51,4 +51,4 @@ production:
   <<: *default
   database: url-shortner_production
   username: url-shortner
-  password: <%= ENV['URL-SHORTNER_DATABASE_PASSWORD'] %>
+  password: <%= ENV['URL_SHORTNER_DATABASE_PASSWORD'] %>
