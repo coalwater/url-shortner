@@ -3,18 +3,16 @@ require 'rails_helper'
 describe UrlController, type: :controller do
   describe 'GET #show' do
     context 'with an existing url' do
-      before :each do
-        @url = create :url, original_url: 'http://example.com'
-      end
+      let(:url) { create :url, original_url: 'http://example.com' }
       it 'redirects to the original url' do
-        get :show, id: @url.key
+        get :show, id: url.key
         expect(response).to redirect_to 'http://example.com'
       end
       it 'increases the hits by one' do
         expect {
-          get :show, id: @url.key
-          @url.reload
-        }.to change(@url.hits, :count).by 1
+          get :show, id: url.key
+          url.reload
+        }.to change(url.hits, :count).by 1
       end
     end
     context 'with a non existing url' do
