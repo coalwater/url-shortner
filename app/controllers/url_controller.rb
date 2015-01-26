@@ -9,7 +9,7 @@ class UrlController < ApplicationController
   # If the url is not found, a simple 404 template is rendered
   def show
     if @url
-      redirect_to @url.hit_and_return
+      redirect_to @url.hit_and_return(ip: request.ip)
     else
       render file: 'public/404.html', status: :not_found
     end

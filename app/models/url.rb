@@ -10,9 +10,12 @@ class Url < ActiveRecord::Base
 
   # Creates a hit record then returns the original url
   #
+  # @param args [Hash] a has of options
+  # @option args [String] :ip The ip the request originated from
   # @return [String] The original_url for the url object
-  def hit_and_return
-    hits.create
+  def hit_and_return(**args)
+    ip = args.fetch :ip, nil
+    hits.create(ip: ip)
     original_url
   end
 end
