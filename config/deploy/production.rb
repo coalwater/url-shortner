@@ -22,7 +22,7 @@ set :puma_env, :production
 
 server 'url.abushady.com',
        user: fetch(:deploy_user),
-       roles: %w{web app},
+       roles: %w{web app db},
        ssh_options: {
            forward_agent: true,
            auth_methods: %w(publickey)
