@@ -1,48 +1,46 @@
-#wrapper
-  = render 'includes/navbar'
-  #page-wrapper
-    .container-fluid
-      / Page Heading
-      .row
-        .col-lg-12
-          %h1.page-header
+#page-wrapper
+  .container-fluid
+    / Page Heading
+    .row
+      .col-lg-12
+        %h1.page-header
+          Dashboard
+          %small Statistics Overview
+        %ol.breadcrumb
+          %li.active
+            %i.fa.fa-dashboard
             Dashboard
-            %small Statistics Overview
-          %ol.breadcrumb
-            %li.active
-              %i.fa.fa-dashboard
-              Dashboard
-      / /.row
-      .row
-        .col-md-6
-          .panel.panel-green
-            .panel-heading
-              .row
-                .col-xs-3
-                  %i.fa.fa-link.fa-5x
-                .col-xs-9.text-right
-                  .huge
-                    = @urls.count
-                    %div Urls
-            %a{:href => "#"}
-              .panel-footer
-                %span.pull-left View Details
-                %span.pull-right
-                  %i.fa.fa-arrow-circle-right
-                .clearfix
-        .col-md-6
-          .panel.panel-primary
-            .panel-heading
-              .row
-                .col-xs-3
-                  %i.fa.fa-bar-chart.fa-5x
-                .col-xs-9.text-right
-                  .huge
-                    = @hits.count
-                    %div Hits
-            %a{:href => "#"}
-              .panel-footer
-                %span.pull-left View Details
-                %span.pull-right
-                  %i.fa.fa-arrow-circle-right
-                .clearfix
+    / /.row
+    .row
+      .col-md-6
+        .panel.panel-green
+          .panel-heading
+            .row
+              .col-xs-3
+                %i.fa.fa-link.fa-5x
+              .col-xs-9.text-right
+                .huge
+                  = @urls.count
+                  %div Urls
+          %a{:href => "#"}
+            .panel-footer
+              %span.pull-left View Details
+              %span.pull-right
+                %i.fa.fa-arrow-circle-right
+              .clearfix
+      .col-md-6
+        .panel.panel-primary
+          .panel-heading
+            .row
+              .col-xs-3
+                %i.fa.fa-bar-chart.fa-5x
+              .col-xs-9.text-right
+                .huge
+                  = @hits.count
+                  %div Hits
+          %a{:href => "#"}
+            .panel-footer
+              %span.pull-left View Details
+              %span.pull-right
+                %i.fa.fa-arrow-circle-right
+              .clearfix
