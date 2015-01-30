@@ -5,4 +5,8 @@ class DashboardController < ApplicationController
     @urls = Url.all
     @hits = UrlHit.all
   end
+
+  def urls
+    @urls = Url.all
+  end
 end
