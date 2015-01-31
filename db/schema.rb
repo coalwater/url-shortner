@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126212923) do
+ActiveRecord::Schema.define(version: 20150131122836) do
 
   create_table "url_hits", force: :cascade do |t|
     t.integer  "url_id",     limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "ip",         limit: 255
+    t.string   "referrer",   limit: 255
   end
 
   create_table "urls", force: :cascade do |t|
