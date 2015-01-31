@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma'
 gem 'haml-rails'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'font-awesome-sass', '~> 4.2.0'
 
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
