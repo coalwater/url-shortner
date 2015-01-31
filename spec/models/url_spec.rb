@@ -8,9 +8,9 @@ describe Url, type: :model do
     expect(build :url, original_url: nil).not_to be_valid
   end
   describe '#hit_and_return' do
+    let(:url) { create :url }
     context 'without an ip' do
       it 'creates a hit record' do
-        url = create :url
         expect{
           url.hit_and_return
         }.to change(UrlHit, :count).by 1
