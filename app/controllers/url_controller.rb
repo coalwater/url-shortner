@@ -1,4 +1,5 @@
 class UrlController < ApplicationController
+  skip_before_filter :authenticate_user!
   before_action :set_url, only: %i(show)
 
   # GET /short-url
