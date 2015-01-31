@@ -1,0 +1,25 @@
+/ Top Menu Items
+%ul.nav.navbar-right.top-nav
+  %li.dropdown
+    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      %i.fa.fa-user
+      = current_user.email
+      %b.caret
+    %ul.dropdown-menu
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-fw.fa-user
+          Profile
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-fw.fa-envelope
+          Inbox
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-fw.fa-gear
+          Settings
+      %li.divider
+      %li
+        = link_to destroy_user_session_path, method: :delete do
+          %i.fa.fa-fw.fa-power-off
+          Logout

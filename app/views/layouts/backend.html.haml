@@ -1,0 +1,6 @@
+- content_for :body do
+  #wrapper
+    = render 'includes/navbar'
+    = yield
+= render template: 'layouts/application'
+
