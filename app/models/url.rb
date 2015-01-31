@@ -15,7 +15,8 @@ class Url < ActiveRecord::Base
   # @return [String] The original_url for the url object
   def hit_and_return(**args)
     ip = args.fetch :ip, nil
-    hits.create(ip: ip)
+    referrer = args.fetch :referrer, nil
+    hits.create(ip: ip, referrer: referrer)
     original_url
   end
 end
