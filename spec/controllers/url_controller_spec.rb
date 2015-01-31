@@ -22,6 +22,15 @@ describe UrlController, type: :controller do
           expect(url.hits.last.ip).to eq ip
         end
       end
+      context 'from referrer \'http://example.com/referrer\'' do
+        let(:referrer) { 'http://example.com/referrer' }
+        it 'stores the referrer in the url_hit object' do
+          allow(request).to receive(:referrer).and_return referrer
+          get :show, id: url.key
+          expect(url.hits.last.referrer).to eq referrer
+        end
+      end
+
     end
     context 'with a non existing url' do
       it 'shows a 404 error' do
