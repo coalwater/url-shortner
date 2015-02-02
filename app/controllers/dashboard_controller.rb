@@ -2,8 +2,8 @@ class DashboardController < ApplicationController
   layout 'backend'
 
   def index
-    @urls = Url.all
-    @hits = UrlHit.all
+    @urls_count = Url.count
+    @hits_count = UrlHit.count
   end
 
   def urls
