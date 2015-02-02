@@ -1,6 +1,6 @@
-class UrlController < ApplicationController
+class UrlsController < ApplicationController
   skip_before_filter :authenticate_user!
-  before_action :set_url, only: %i(show)
+  before_action :set_url, only: %i(redirect)
 
   # GET /short-url
   #
@@ -8,7 +8,7 @@ class UrlController < ApplicationController
   # redirects the user to the original long url, with each hit the
   # action saves a hit on the url,
   # If the url is not found, a simple 404 template is rendered
-  def show
+  def redirect
     if @url
       redirect_to @url.hit_and_return(ip: request.ip, referrer: request.referrer)
     else
