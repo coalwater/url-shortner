@@ -2,12 +2,12 @@ class UrlsController < ApplicationController
   skip_before_filter :authenticate_user!
   before_action :set_url, only: %i(redirect)
 
-  # GET /short-url
-  #
-  # This action fetches a single shortened url from the database and
+  # Fetches a single shortened url from the database and
   # redirects the user to the original long url, with each hit the
   # action saves a hit on the url,
   # If the url is not found, a simple 404 template is rendered
+  #
+  # GET /:url-key
   def redirect
     if @url
       redirect_to @url.hit_and_return(ip: request.ip, referrer: request.referrer)
