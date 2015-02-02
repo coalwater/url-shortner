@@ -7,6 +7,10 @@ require 'rspec/rails'
 require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
+# SimpleCov for coverage
+require 'simplecov'
+SimpleCov.start 'rails'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -52,6 +56,9 @@ RSpec.configure do |config|
 
   # use short factory girl calls
   config.include FactoryGirl::Syntax::Methods
+
+  #devise settings for testing
+  config.include Devise::TestHelpers, type: :controller
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

@@ -20,9 +20,9 @@
                 %i.fa.fa-link.fa-5x
               .col-xs-9.text-right
                 .huge
-                  = @urls.count
+                  = @urls_count
                   %div Urls
-          %a{:href => "#"}
+          %a{href: urls_dashboard_path}
             .panel-footer
               %span.pull-left View Details
               %span.pull-right
@@ -36,9 +36,9 @@
                 %i.fa.fa-bar-chart.fa-5x
               .col-xs-9.text-right
                 .huge
-                  = @hits.count
+                  = @hits_count
                   %div Hits
-          %a{:href => "#"}
+          %a{href: hits_dashboard_path}
             .panel-footer
               %span.pull-left View Details
               %span.pull-right
