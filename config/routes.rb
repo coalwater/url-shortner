@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :urls
+  resources :url_hits, only: %i(show index destroy)
+
   resource :dashboard, only: :show do
     collection do
-      get :homepage
       get :urls
       get :hits
     end
@@ -12,5 +14,5 @@ Rails.application.routes.draw do
 
   get '/:id', to: 'urls#redirect'
 
-  root to: 'dashboards#homepage'
+  root to: 'dashboards#show'
 end

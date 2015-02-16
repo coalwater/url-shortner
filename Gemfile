@@ -55,5 +55,6 @@ group :development do
   gem 'capistrano-chruby', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma', require: false
+  gem 'byebug'
 end
 #

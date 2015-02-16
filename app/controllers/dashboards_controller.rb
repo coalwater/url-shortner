@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  layout 'backend', except: :homepage
+  layout 'backend'
 
   def show
     @urls_count = Url.count
@@ -11,7 +11,7 @@ class DashboardsController < ApplicationController
   end
 
   def hits
-    @hits = UrlHit.all
+    @hits = UrlHit.includes(:url).order(:url_id)
   end
 
 end

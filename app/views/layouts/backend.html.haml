@@ -1,6 +1,9 @@
 - content_for :body do
   #wrapper
     = render 'includes/navbar'
-    = yield
+    #page-wrapper
+      .container-fluid
+        = flash_messages
+        = yield
 = render template: 'layouts/application'
 
