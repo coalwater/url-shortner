@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  layout 'backend', except: :homepage
+  layout 'backend'
 
   def show
     @urls_count = Url.count

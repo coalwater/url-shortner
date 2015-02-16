@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: :show do
     collection do
-      get :homepage
       get :urls
       get :hits
     end
@@ -12,5 +11,5 @@ Rails.application.routes.draw do
 
   get '/:id', to: 'urls#redirect'
 
-  root to: 'dashboards#homepage'
+  root to: 'dashboards#show'
 end
