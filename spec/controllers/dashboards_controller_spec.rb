@@ -3,26 +3,10 @@ require 'rails_helper'
 describe DashboardsController, type: :controller do
   let!(:user) { create :user }
 
-  describe '#hompage' do
-    context 'non logged in user' do
-      it 'redirects to the login page' do
-        get :homepage
-        expect(response).to redirect_to new_user_session_path
-      end
-    end
-    context 'logged in user' do
-      before :each do
-        sign_in user
-      end
-      describe 'don\'t know what it should show yet'
-    end
-  end
-
-
   describe '#show' do
     context 'non logged in user' do
       it 'redirects to login page' do
-        get :homepage
+        get :show
         expect(response).to redirect_to new_user_session_path
       end
     end
