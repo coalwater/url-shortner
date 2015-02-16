@@ -11,7 +11,7 @@ class DashboardsController < ApplicationController
   end
 
   def hits
-    @hits = UrlHit.all
+    @hits = UrlHit.includes(:url).order(:url_id)
   end
 
 end

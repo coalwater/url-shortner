@@ -1,0 +1,21 @@
+.col-md-12
+  %table.table.table-striped
+    - @urls.each do |url|
+      %tr
+        %th Key
+        %th URL
+        %th Actions
+      %tr
+        %td
+          = url.key
+        %td
+          = url.original_url
+        %td
+          = link_to url, class: 'btn btn-success' do
+            = icon 'eye'
+          = link_to [:edit, url], class: 'btn btn-primary' do
+            = icon 'pencil'
+          = link_to url, method: :delete, class: 'btn btn-danger', data: {confirm: t('messages.delete_confirmation')} do
+            = icon 'trash-o'
+
+

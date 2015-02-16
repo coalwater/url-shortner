@@ -1,0 +1,23 @@
+.col-md-12
+  %table.table.table-striped
+    %tr
+      %th Url key
+      %th URL
+      %th IP
+      %th Referrer
+      %th Actions
+    - @hits.each do |hit|
+      %tr
+        %td
+          = hit.url_key
+        %td
+          = hit.original_url
+        %td
+          = hit.ip
+        %td
+          = hit.referrer
+        %td
+          = link_to hit, method: :delete, class: 'btn btn-danger', data: {confirm: t('messages.delete_confirmation')} do
+            = icon 'trash-o'
+
+
