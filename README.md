@@ -5,4 +5,6 @@ Url Shortner
 [![Test Coverage](https://codeclimate.com/github/coalwater/url-shortner/badges/coverage.svg)](https://codeclimate.com/github/coalwater/url-shortner)
 [![Inline docs](http://inch-ci.org/github/coalwater/url-shortner.svg?branch=master)](http://inch-ci.org/github/coalwater/url-shortner)
 
-This is a simple url shortner that I'm creating for my personal usages
+This is a simple url shortner that I'm creating for my personal usages,
+updating it slowly when I have time,
+and hope it surves as a good code sample since all my code is pushed into private repos
