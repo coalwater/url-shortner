@@ -1,10 +1,10 @@
 .col-md-12
   %table.table.table-striped
+    %tr
+      %th Key
+      %th URL
+      %th Actions
     - @urls.each do |url|
-      %tr
-        %th Key
-        %th URL
-        %th Actions
       %tr
         %td
           = url.key
